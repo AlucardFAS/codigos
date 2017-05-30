@@ -12,6 +12,9 @@ Contém inserção, impressão, busca e checagem AVL
 <b>-Arvore Rubro-negra [ADO5]</b><br>
 Contém inserção, remoção, impressão e busca
 <br>
+<b>-Arvore B [ADO6]</b><br>
+Contém inserção e busca
+<br>
 <b>-Exercícios URI</b><br>
 1173 C
 <br>
