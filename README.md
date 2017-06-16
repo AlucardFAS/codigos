@@ -14,6 +14,7 @@ Contém inserção, remoção, impressão e busca
 <br>
 <b>-Arvore B [ADO6]</b><br>
 Contém inserção e busca
+<br>
 <b>-Hash [ADO7]</b><br>
 Contém inserção, busca e remoção lineares e quadráticas
 <br>
