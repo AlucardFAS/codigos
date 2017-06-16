@@ -16,7 +16,7 @@ Contém inserção, remoção, impressão e busca
 Contém inserção e busca
 <br>
 <b>-Hash [ADO7]</b><br>
-Contém inserção, busca e remoção lineares e quadráticas
+Contém inserção, busca e remoção pelos métodos linear, quadrático e duplo
 <br>
 <b>-Exercícios URI</b><br>
 1173 C
