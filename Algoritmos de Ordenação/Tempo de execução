@@ -1,0 +1,44 @@
+elementos 1000 10000 100000 10000000
+
+
+merge sort:
+
+0,00114099924 segundos
+0,005126999029 segundos
+0,033764996944 segundos
+0,257652980648 segundos
+
+bubble sort:
+
+0,006893999263 segundos
+0,281641999073 segundos
+27,22486299698 segundos
+2148,34851947118 segundos
+
+Quick:
+
+segundos
+segundos
+segundos
+segundos
+
+Quick iterativo:
+
+0,000753999248 segundos
+0,000953999048 segundos
+0,003002996999 segundos
+0,018384981616 segundos
+
+Shell:
+
+0,001007999226 segundos
+0,004374998967 segundos
+0,030000997047 segundos
+0,31529697955 segundos
+
+Insertion:
+
+0,002416999201 segundos
+0,075492998982 segundos
+6,239940997001 segundos
+1789,15450540035 segundos
