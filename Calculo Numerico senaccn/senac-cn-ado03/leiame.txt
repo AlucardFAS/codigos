@@ -1,0 +1,3 @@
+Os métodos float, double e long, calculam o número de euler de acordo com o nome do método, ou seja, com diferentes precisões.
+
+As funções funcionam por meio de um laço de 1 a 20, que gera um valor que é 10 elevado ao laço i(1 a 20). Com isso, os valores são passados à fórmula já estabelecida, que realiza o cálculo e gera o gráfico por meio de gnuplot.

@@ -1,0 +1,7 @@
+Neste código foi realizada a criação de uma lib capaz de realizar o cálculo do seno, além do plot de gráfico na chamada principal(main).
+
+LIB
+A lib realiza o cálculo do seno utilizando de dupla precisão por meio do método de Taylor, que consiste num somatório pré-estabelecido que gera uma precisão melhor de acordo com o tamanho do laço(neste, utilizamos 15), utilizando as funcionalidades de métodos fatoriais e potenciais.
+
+PLOT DO GRÁFICO EM MAIN
+Após a execução do programa são executados os métodos básicos para plotação do gráfico, que primeiramente buscam a existência de figuras já existentes e as excluem, e logo após chamam os métodos para obtenção dos valores para plotagem que é realizada no final do código.
