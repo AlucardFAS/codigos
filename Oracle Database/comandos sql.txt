@@ -1,0 +1,24 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf830
+{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;\red53\green53\blue53;}
+{\*\expandedcolortbl;;\cssrgb\c27059\c27059\c27059;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab560
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\fs24 \cf2 Apaga a tabela vinculo:\
+\
+DROP TABLE vinculo;\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf2 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf2 Deleta os registros em que o tipo \'e9 \'93Aluno\'94:\
+\
+DELETE FROM vinculo\
+WHERE tipo=\'91Aluno\'92;\
+\
+Altera os registros em que o valor de regime_juridico \'e9 trabalhista:\
+\
+UPDATE vinculo\
+SET tipo = \'91Professor\'92 , regime_juridico = \'91Estatario\'92\
+WHERE regime_juridico = \'91Trabalhista\'92;}
