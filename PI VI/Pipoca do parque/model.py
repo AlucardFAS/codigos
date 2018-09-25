@@ -86,3 +86,4 @@ def PipocaDoParque():
     printAll(totalGasto,estoque,numSimulacoes,totalSol,totalClientes,valorPipoca,totalClientesAtendidos)
 
 PipocaDoParque()
+input()
