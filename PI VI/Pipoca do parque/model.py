@@ -15,6 +15,16 @@ def Clima(mes):
     else:
         return 1
 
+def printAll(totalGasto,estoque,numSimulacoes,totalSol,totalClientes,valorPipoca,totalClientesAtendidos):
+    print("Total de gastos: ", totalGasto*numSimulacoes)
+    print("Total recebido: ", totalClientesAtendidos*valorPipoca)
+    print("Lucros: ", totalClientesAtendidos*valorPipoca-totalGasto*numSimulacoes)
+    print("Clientes sem pipoca: ", totalClientes)
+    print("Lucro Máximo com todos clientes atendidos: ", totalClientes*valorPipoca)
+    print("Estoque: ", estoque)
+    print("Dias de sol: ", totalSol)
+    print("Dias de chuva: ", numSimulacoes - totalSol)
+
 def PipocaDoParque(): 
 
     ####VALUES####
@@ -28,7 +38,10 @@ def PipocaDoParque():
     sol = 0.4
     estoqueMax = 100
     estoqueMin = 0
-
+    qtdClientes = 60
+    totalSol = 0
+    totalClientes = 0
+    totalClientesAtendidos = 0
 
     ####INPUT####
     estoque = int(input("Com qual tamanho de estoque deseja simular?  "))
@@ -37,8 +50,28 @@ def PipocaDoParque():
 
 
     ####PROGRAM####
-    estadoTempo = Clima(mes)
+    totalGasto = valorEstoque * estoque
+
+    for i in range(numSimulacoes):
+        estadoTempo = Clima(mes)
+        if (estadoTempo == 1):
+            totalSol += 1
+            
+        if (estadoTempo == 0):
+            qtdClientes -= int((randint(0,60)/100)*60)
+        else:
+            qtdClientes += int((randint(0,40)/100)*60)
+
+        if (qtdClientes >= estoque):
+            totalClientesAtendidos = estoque
+        else:
+            totalClientesAtendidos = qtdClientes 
+
+        totalClientes += qtdClientes
+        
+        qtdClientes = 60
 
 
+    printAll(totalGasto,estoque,numSimulacoes,totalSol,totalClientes,valorPipoca,totalClientesAtendidos)
 
 PipocaDoParque()
