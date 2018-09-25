@@ -23,7 +23,7 @@ def printAll(totalGasto,estoque,numSimulacoes,totalSol,totalClientes,valorPipoca
     print("Dias de sol: ", totalSol," - ",round((totalSol/numSimulacoes*100),2),"%")
     print("Dias de chuva: ", numSimulacoes - totalSol," - ", round(((numSimulacoes - totalSol)/numSimulacoes*100),2),"%")
     print("Média de Lucro: ", lucro/numSimulacoes)
-#    print("Média de clientes atendidos: ",totalClientesAtendidos/numSimulacoes)
+    print("Média de clientes atendidos: ",totalClientesAtendidos/numSimulacoes)
 #    print("Média de de clientes sem atendimento: ", 100-(totalClientesAtendidos/numSimulacoes))
 
 def PipocaDoParque(): 
@@ -67,11 +67,11 @@ def PipocaDoParque():
             totalSol += 1
 
         for j in range(qtdClientes):
-            if (randint(0,100)/100 > segundaPipoca):
+            if (randint(0,100)/100 < segundaPipoca):
                 qtdClientes += 1
-                if (randint(0,100)/100 > terceiraPipoca):
+                if (randint(0,100)/100 < terceiraPipoca):
                     qtdClientes += 1
-                    if (randint(0,100)/100 > quartaPipoca):
+                    if (randint(0,100)/100 < quartaPipoca):
                         qtdClientes += 1
 
         if (qtdClientes >= estoque):
