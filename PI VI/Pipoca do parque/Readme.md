@@ -28,6 +28,9 @@ $ Em qual mês deseja simular a venda?  1
 ```
 <br>
 Conforme inserção do input, os devidos calculos e simulações do problema serão realizados, trazendo, por meio de variáveis aleatórias, as porcentagens obtidas com os cáculos.
+
+
+
 ```bash
 $ Total de gastos:  14000.0
 $ Total recebido:  34955.0
@@ -39,5 +42,8 @@ $ Dias de sol:  56  -  56.0 %
 $ Dias de chuva:  44  -  44.0 %
 $ Média de Lucro:  209.55
 ```
-<br>
+
+
+
+
 Para encerrar a aplicação, se faz necessário antes o clique de uma tecla qualquer no terminal.
