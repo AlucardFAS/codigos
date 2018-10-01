@@ -26,10 +26,18 @@ def Main():
     alturaInicial = float(input("Entre com a altura inicial: "))
     limiteAltura = float(input("Entre com o limite de altura: "))
 
+
     distancia = QuicarBola(alturaInicial,limiteAltura)
+    print("\n\nDistância percorrida pela bola: ", distancia,"\n")
 
-    print("\n\nDistância percorrida pela bola: ", distancia)
 
-
+#Descomente esta parte para realizar multiplos testes
+#    limiteAltura = [1,0.1,0.0001, 0.0000001,0.0000000000000001]
+#    for i in range(5):
+#        print()
+#        distancia = QuicarBola(alturaInicial,limiteAltura[i])
+#        print("Distância percorrida pela bola: ", distancia,"\n")
 
 Main()
+#comente o input para não ter tecla de finalização
+input()
