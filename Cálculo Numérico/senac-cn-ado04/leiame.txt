@@ -1,0 +1,16 @@
+﻿bissec.f95:
+
+Realiza o cálculo do intervalo do valor de entrada, realizando um laço indo até o valor máximo estipulado ou 
+ao encontrar o ponto médio, modificando o intervalo caso a condição não seja atingida 
+
+
+newton.f95:
+
+É realizado um laço de 1000 iterações para o valor de entrada ou até que a condição de parada seja alcançada.
+No laço calculamos o valor da raiz buscando a chegada à condição.
+
+secante.f95:
+
+
+De acordo com a entrada, é calculado o valor de parada cumprindo as condições: o valor de p alcançar a entrada, 
+ou o valor de p1 - p

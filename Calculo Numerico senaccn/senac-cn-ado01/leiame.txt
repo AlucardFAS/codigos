@@ -1,2 +1,0 @@
-﻿O algoritmo funciona por meio da conversão da base inserida para a base 10, sendo assim, realiza a transformações de base de acordo com a conversão da base 10 paras as seguintes.
-Conversões para bases menores são feitas por meio do método de restos
