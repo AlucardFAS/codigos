@@ -34,11 +34,11 @@ class Cube(object):
         (5,1,4,8)
         )
     texcoord = ((0,0),(1,0),(1,1),(0,1))
-    #-------------------------------------
+    
     def __init__(self):
         self.coordinates = [0,0,0]
-        self.rubik_id = self.load_texture("rubik.png")
-
+        self.Dado_id = self.load_texture("Um.png")
+        
     def load_texture(self,filename):
         textureSurface = pygame.image.load(filename)
         textureData = pygame.image.tostring(textureSurface,"RGBA",1)
@@ -64,9 +64,11 @@ class Cube(object):
         glRotatef(self.coordinates[0],1,0,0)
         glRotatef(self.coordinates[1],0,1,0)
         glRotatef(self.coordinates[2],0,0,1)
-        
+
         glEnable(GL_TEXTURE_2D)
-        glBindTexture(GL_TEXTURE_2D,self.rubik_id)
+        glBindTexture(GL_TEXTURE_2D,self.Dado_id)
+
+        
         
         glBegin(GL_QUADS)
         
@@ -149,12 +151,12 @@ class Cube(object):
         self.f_key = False
     
     def delete_texture(self):
-        glDeleteTextures(self.rubik_id)
+        glDeleteTextures(self.Dado_id)
     
 def main():
     pygame.init()
     pygame.display.set_mode((640,480),pygame.DOUBLEBUF|pygame.OPENGL)
-    pygame.display.set_caption("PyOpenGL Tutorial")
+    pygame.display.set_caption("Senac São Paulo - Computação Gráfica")
     clock = pygame.time.Clock()
     done = False
     
