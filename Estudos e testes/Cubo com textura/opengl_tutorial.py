@@ -9,6 +9,7 @@ class Cube(object):
     up_key = False
     down_key = False
     a_key = False
+    w_key = False
     s_key = False
     d_key = False
     r_key = False
@@ -34,11 +35,11 @@ class Cube(object):
         (5,1,4,8)
         )
     texcoord = ((0,0),(1,0),(1,1),(0,1))
-    #-------------------------------------
+    
     def __init__(self):
         self.coordinates = [0,0,0]
-        self.rubik_id = self.load_texture("rubik.png")
-
+        self.Dado_id = self.load_texture("Dado.bmp")
+        
     def load_texture(self,filename):
         textureSurface = pygame.image.load(filename)
         textureData = pygame.image.tostring(textureSurface,"RGBA",1)
@@ -49,6 +50,9 @@ class Cube(object):
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR)
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR)
         glTexImage2D(GL_TEXTURE_2D,0,GL_RGBA,width,height,0,GL_RGBA,GL_UNSIGNED_BYTE,textureData)
+
+
+        
         return ID
 
     def render_scene(self):
@@ -64,9 +68,11 @@ class Cube(object):
         glRotatef(self.coordinates[0],1,0,0)
         glRotatef(self.coordinates[1],0,1,0)
         glRotatef(self.coordinates[2],0,0,1)
-        
+
         glEnable(GL_TEXTURE_2D)
-        glBindTexture(GL_TEXTURE_2D,self.rubik_id)
+        glBindTexture(GL_TEXTURE_2D,self.Dado_id)
+
+        
         
         glBegin(GL_QUADS)
         
@@ -86,6 +92,12 @@ class Cube(object):
         else:
             self.coordinates[0] += 2
             
+    def rotate_minx(self):
+        if self.coordinates[0] < 0:
+            self.coordinates[0] = 360
+        else:
+            self.coordinates[0] -= 2
+
     def rotate_y(self):
         if self.coordinates[1] > 360:
             self.coordinates[1] = 0
@@ -122,8 +134,10 @@ class Cube(object):
             self.rotate_x()
         elif self.s_key:
             self.rotate_y()
+        elif self.w_key:
+            self.rotate_minx()
         elif self.d_key:
-            self.rotate_y()
+            self.rotate_z()
         elif self.r_key:
             self.move_away()
         elif self.f_key:
@@ -143,18 +157,19 @@ class Cube(object):
         self.up_key = False
         self.down_key = False
         self.a_key = False
+        self.w_key = False
         self.s_key = False
         self.d_key = False
         self.r_key = False
         self.f_key = False
     
     def delete_texture(self):
-        glDeleteTextures(self.rubik_id)
+        glDeleteTextures(self.Dado_id)
     
 def main():
     pygame.init()
     pygame.display.set_mode((640,480),pygame.DOUBLEBUF|pygame.OPENGL)
-    pygame.display.set_caption("PyOpenGL Tutorial")
+    pygame.display.set_caption("Senac São Paulo - Computação Gráfica")
     clock = pygame.time.Clock()
     done = False
     
@@ -179,6 +194,9 @@ def main():
                 elif event.key == pygame.K_s:
                     cube.rotate_y()
                     cube.s_key = True
+                elif event.key == pygame.K_w:
+                    cube.rotate_minx()
+                    cube.w_key = True
                 elif event.key == pygame.K_d:
                     cube.rotate_z()
                     cube.d_key = True
@@ -207,6 +225,8 @@ def main():
                 elif event.key == pygame.K_s:
                     cube.keyup()
                 elif event.key == pygame.K_d:
+                    cube.keyup()
+                elif event.key == pygame.K_w:
                     cube.keyup()
                 elif event.key == pygame.K_r:
                     cube.keyup()
