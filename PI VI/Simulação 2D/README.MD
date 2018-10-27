@@ -4,6 +4,6 @@ Deilão, localiza-se no nordeste de Portugal, no distrito de Bragança. Possui uma
 bioclimática adaptada por Agroconsultores e Coba (1991). 
 
 
-h3. Artigo
+h3. Artigo 
 
 <a href="https://periodicos.ufsm.br/cienciaflorestal/article/view/27728/15735">COMPORTAMENTO DO FOGO EM DIFERENTES PERÍODOS E CONFIGURAÇÕES DE UMA PAISAGEM NO NORDESTE DE PORTUGAL</a>
