@@ -1,14 +1,14 @@
-# Modelo matem·tico de propagaÁ„o de incÍndio utilizando Cadeias de Markov
+# Modelo matem√°tico de propaga√ß√£o de inc√™ndio utilizando Cadeias de Markov
 
-Deil„o, localiza-se no nordeste de Portugal, no distrito de BraganÁa. Possui uma ·rea de 4.197 ha. O relevo È ondulado, variando em altitude entre 600 e 900 m, sendo a altitude m·xima igual a 958 m. O tipo clim·tico na ·rea de estudo È de Terra Fria de Planalto, segundo a classificaÁ„o
-bioclim·tica adaptada por Agroconsultores e Coba (1991). 
+Deil√£o, localiza-se no nordeste de Portugal, no distrito de Bragan√ßa. Possui uma √°rea de 4.197 ha. O relevo √© ondulado, variando em altitude entre 600 e 900 m, sendo a altitude m√°xima igual a 958 m. O tipo clim√°tico na √°rea de estudo √© de Terra Fria de Planalto, segundo a classifica√ß√£o
+bioclim√°tica adaptada por Agroconsultores e Coba (1991). 
 
 
 ## Artigos de estudo 
 
-* <a href="https://periodicos.ufsm.br/cienciaflorestal/article/view/27728/15735">COMPORTAMENTO DO FOGO EM DIFERENTES PERÕODOS E CONFIGURA«’ES DE UMA PAISAGEM NO NORDESTE DE PORTUGAL</a><br>
-* <a href="http://www.scielo.br/pdf/floram/v24/2179-8087-floram-2179-8087025615.pdf">Mapeamento do Risco de IncÍndios Florestais Utilizando TÈcnicas de Geoprocessamento</a><br>
-* <a href="file:///C:/Users/Usuario/Downloads/PRODUTO11_apostila_incendios.pdf">T…CNICAS DE PREVEN«√O E COMBATE ¿ INC NDIOS FLORESTAIS</a><br>
+* <a href="https://periodicos.ufsm.br/cienciaflorestal/article/view/27728/15735">COMPORTAMENTO DO FOGO EM DIFERENTES PER√çODOS E CONFIGURA√á√ïES DE UMA PAISAGEM NO NORDESTE DE PORTUGAL</a><br>
+* <a href="http://www.scielo.br/pdf/floram/v24/2179-8087-floram-2179-8087025615.pdf">Mapeamento do Risco de Inc√™ndios Florestais Utilizando T√©cnicas de Geoprocessamento</a><br>
+* <a href="https://www2.codevasf.gov.br/programas_acoes/programa-florestal-1/acoes-florestais-na-bacia-do-parnaiba/produto11_apostila_incendios.pdf">T√âCNICAS DE PREVEN√á√ÉO E COMBATE √Ä INC√äNDIOS FLORESTAIS</a><br>
 
 ## Sites de estudo
 
