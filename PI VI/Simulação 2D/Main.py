@@ -1,8 +1,19 @@
 from Model import *
+from csv import reader
 
-#Teste instância de Model(Corresponde a uma célula da matriz)
-terreno = Ground("terra",0.5,8)
+def load_csv(filename):
+	dataset = list()
+	with open(filename, 'r') as file:
+		csv_reader = reader(file)
+		for row in csv_reader:
+			if not row:
+				continue
+			dataset.append(row)
+	return dataset
 
+def main():
+    data = load_csv('myterrain.csv')
+    print(data)
 
-mymatrix = Matrix_Map(5)
-mymatrix.Input_Element(terreno)
+if __name__ == "__main__":
+    main()
