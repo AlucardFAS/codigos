@@ -116,11 +116,24 @@ public class Lexer {
         case 0:
           if (peek == '/')
             { state = 1; }
+          else if (peek == '*')
+            { state = 2; }
           else 
             break;
         case 1:
           if (peek == '/')
-            { return c = new Comment(Tag.COMMENTLINE); }
+            { 
+              line = line - 1;
+              return c = new Comment(Tag.COMMENTLINE); 
+            }
+          else if (peek == '*')
+            { return c = new Comment(Tag.INITCOMMENTSTRUCTURE); }
+          else 
+            break;
+        case 2:
+          if (peek == '/')
+            { return c = new Comment(Tag.ENDCOMMENTSTRUCTURE); } 
+          else break;
       }
 
       if (state < 1)
