@@ -17,7 +17,28 @@ public class Lexer {
     reserve(new Word(Tag.FALSE, "false"));
   }
 
-  public Token scan() throws IOException {
+  public int FloatingPoint(bool notHavePreviousNumber) {
+    peek = (char) System.in.read();
+
+    if (notHavePreviousNumber && Character.isDigit(peek) == false)
+      { return -1; }
+
+    if (Character.isDigit(peek)) 
+    {
+      int v = 0;
+      do {
+        v = 10 * v + Character.digit(peek, 10);
+        peek = (char) System.in.read();
+      } while (Character.isDigit(peek));
+      return v;
+    } 
+    else 
+    {
+      return 0;
+    }
+  }
+
+  public Token Scan() throws IOException {
     
     for (;; peek = (char) System.in.read()) {
       if (peek == ' ' || peek == '\t')
@@ -34,8 +55,30 @@ public class Lexer {
         v = 10 * v + Character.digit(peek, 10);
         peek = (char) System.in.read();
       } while (Character.isDigit(peek));
+      
+      if (peek == '.')
+      {
+        floatingNumb = FloatingPoint(false);
+        System.out.println(v + "." + floatingNumb);
+        return Num(v, floatingNumb);
+      } else {
+        System.out.println(v);
+        return new Num(v);
+      }
+    }
 
-      return new Num(v);
+    if (peek == '.')
+    { 
+      int floatingNumb = FloatingPoint(true); 
+      
+      if (floatingNumb < 0)
+      {
+        continue;
+      }
+      else {
+        System.out.println("0." + floatingNumb);
+        return Num(0, floatingNumb); 
+      }
     }
 
     if (Character.isLetter(peek)) {
@@ -48,6 +91,8 @@ public class Lexer {
 
       String s = b.toString();
       Word w = (Word) words.get(s);
+      
+      System.out.println(s);
 
       if (w != null)
         return w;
@@ -59,45 +104,47 @@ public class Lexer {
     }
 
     Operator o;
+    int state = 0;
 
     while(true)
     {
-      int state = 0;
-      
-      peek = (char) System.in.read();
+      if(state != 0)
+      {
+        peek = (char) System.in.read();
+      }
 
       switch (state) 
       {
         case 0:
           if (peek == '<')
-            { state = 1; }
+            { state = 1; continue;}
           else if (peek == '=')
-            { state = 2; }
+            { state = 2; continue;}
           else if (peek == '!')
-            { state = 3; }
+            { state = 3; continue;}
           else if (peek == '>')
-            { state = 4; }
+            { state = 4; continue;}
           else 
             break;
         case 1:
           if (peek == '=')
-            { return o = new Operator(Tag.LE); }
-          else { return o = new Operator(Tag.LESSER); }
+            { System.out.println("LE"); return o = new Operator(Tag.LE); }
+          else { System.out.println("LESSER"); return o = new Operator(Tag.LESSER); }
         case 2:
           if (peek == '=')
-            { return o = new Operator(Tag.EQUAL); }
+            { System.out.println("EQUAL"); return o = new Operator(Tag.EQUAL); }
           else
             break;
         case 3:
           if (peek == '=')
-            { return o = new Operator(Tag.DIFFERENT); }
+            { System.out.println("DIFFERENT"); return o = new Operator(Tag.DIFFERENT); }
           else
             break;
         case 4:
           if (peek == '=')
-          { return o = new Operator(Tag.GE); }
+          { System.out.println("GE"); return o = new Operator(Tag.GE); }
           else
-            { return o = new Operator(Tag.GREATER); }
+            { System.out.println("GREATER"); return o = new Operator(Tag.GREATER); }
       }
 
       if (state < 1)
@@ -105,9 +152,9 @@ public class Lexer {
     }
 
     Comment c;
-
+    state = 0;
+    
     while(true){
-      int state = 0;
       
       peek = (char) System.in.read();
 
@@ -115,24 +162,29 @@ public class Lexer {
       {
         case 0:
           if (peek == '/')
-            { state = 1; }
+            { state = 1; continue;}
           else if (peek == '*')
-            { state = 2; }
+            { state = 2; continue;}
           else 
             break;
         case 1:
           if (peek == '/')
             { 
-              line = line - 1;
+              System.out.println("COMMENTLINE");
               return c = new Comment(Tag.COMMENTLINE); 
             }
           else if (peek == '*')
-            { return c = new Comment(Tag.INITCOMMENTSTRUCTURE); }
-          else 
-            break;
+            { 
+              System.out.println("INITCOMMENTSTRUCTURE");
+              return c = new Comment(Tag.INITCOMMENTSTRUCTURE); 
+            }
+          else break;
         case 2:
           if (peek == '/')
-            { return c = new Comment(Tag.ENDCOMMENTSTRUCTURE); } 
+            { 
+              System.out.println("ENDCOMMENTSTRUCTURE");
+              return c = new Comment(Tag.ENDCOMMENTSTRUCTURE); 
+            } 
           else break;
       }
 
