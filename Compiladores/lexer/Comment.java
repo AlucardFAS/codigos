@@ -1,3 +1,4 @@
+
 public class Comment extends Token {
     public final int comment;
   
@@ -5,4 +6,4 @@ public class Comment extends Token {
         super(c);
         comment = c;
     }
-  }
+}

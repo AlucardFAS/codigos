@@ -17,7 +17,7 @@ public class Lexer {
     reserve(new Word(Tag.FALSE, "false"));
   }
 
-  public int FloatingPoint(bool notHavePreviousNumber) {
+  public int FloatingPoint(boolean notHavePreviousNumber) throws IOException {
     peek = (char) System.in.read();
 
     if (notHavePreviousNumber && Character.isDigit(peek) == false)
@@ -56,11 +56,13 @@ public class Lexer {
         peek = (char) System.in.read();
       } while (Character.isDigit(peek));
       
+      
+      
       if (peek == '.')
       {
-        floatingNumb = FloatingPoint(false);
+        int floatingNumb = FloatingPoint(false);
         System.out.println(v + "." + floatingNumb);
-        return Num(v, floatingNumb);
+        return new NumFloat(v, floatingNumb);
       } else {
         System.out.println(v);
         return new Num(v);
@@ -71,13 +73,9 @@ public class Lexer {
     { 
       int floatingNumb = FloatingPoint(true); 
       
-      if (floatingNumb < 0)
-      {
-        continue;
-      }
-      else {
+      if (floatingNumb >= 0) {
         System.out.println("0." + floatingNumb);
-        return Num(0, floatingNumb); 
+        return new NumFloat(0, floatingNumb); 
       }
     }
 
@@ -128,23 +126,23 @@ public class Lexer {
             break;
         case 1:
           if (peek == '=')
-            { System.out.println("LE"); return o = new Operator(Tag.LE); }
-          else { System.out.println("LESSER"); return o = new Operator(Tag.LESSER); }
+            { System.out.println("LE"); peek = (char) System.in.read(); return o = new Operator(Tag.LE); }
+          else { System.out.println("LESSER"); peek = (char) System.in.read(); return o = new Operator(Tag.LESSER); }
         case 2:
           if (peek == '=')
-            { System.out.println("EQUAL"); return o = new Operator(Tag.EQUAL); }
+            { System.out.println("EQUAL"); peek = (char) System.in.read(); return o = new Operator(Tag.EQUAL); }
           else
             break;
         case 3:
           if (peek == '=')
-            { System.out.println("DIFFERENT"); return o = new Operator(Tag.DIFFERENT); }
+            { System.out.println("DIFFERENT"); peek = (char) System.in.read(); return o = new Operator(Tag.DIFFERENT); }
           else
             break;
         case 4:
           if (peek == '=')
-          { System.out.println("GE"); return o = new Operator(Tag.GE); }
+          { System.out.println("GE");peek = (char) System.in.read(); return o = new Operator(Tag.GE); }
           else
-            { System.out.println("GREATER"); return o = new Operator(Tag.GREATER); }
+            { System.out.println("GREATER"); peek = (char) System.in.read(); return o = new Operator(Tag.GREATER); }
       }
 
       if (state < 1)
