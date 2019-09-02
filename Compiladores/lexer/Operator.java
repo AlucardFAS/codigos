@@ -5,4 +5,4 @@ public class Operator extends Token {
         super(o);
         operator = o;
     }
-  }
+}
