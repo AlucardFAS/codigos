@@ -1,0 +1,6 @@
+Temp/
+temp/
+.vs/
+obj/
+Library\PlayerDataCache
+__pycache__/
