@@ -4,6 +4,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 //terminar aqui, tem erros
+
 class RetrofitInitializer {
     fun init() {
         Retrofit.Builder()
