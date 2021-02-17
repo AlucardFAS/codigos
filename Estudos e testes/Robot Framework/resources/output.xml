@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.8.0 on win32)" generated="20210217 01:40:26.637" rpa="false">
+<suite id="s1" name="StepsConsultHero" source="C:\dev\codigos\Estudos e testes\Robot Framework\resources\StepsConsultHero.robot">
+<test id="s1-t1" name="Consultar a ficha de um super-herói (/id)">
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>consultaHeroi</arg>
+<arg>${URL}</arg>
+<arg>disable_warnings=True</arg>
+</arguments>
+<msg timestamp="20210217 01:40:26.902" level="INFO">Creating Session using : alias=consultaHeroi, url=https://superheroapi.com/api/3630587223674860, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210217 01:40:26.901" endtime="20210217 01:40:26.902"></status>
+</kw>
+<kw name="Get On Session" library="RequestsLibrary">
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<arguments>
+<arg>consultaHeroi</arg>
+<arg>/search/${SEARCHED_HERO}</arg>
+</arguments>
+<assign>
+<var>${RESPONSE}</var>
+</assign>
+<msg timestamp="20210217 01:40:27.749" level="INFO">GET Request : url=https://superheroapi.com/api/3630587223674860/search/green_arrow (redirected) 
+ path_url=/api/3630587223674860/search/green_arrow 
+ headers={'User-Agent': 'python-requests/2.22.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20210217 01:40:27.749" level="INFO">GET Response : url=https://www.superheroapi.com/api.php/3630587223674860/search/green_arrow 
+ status=200, reason=OK 
+ headers={'Date': 'Wed, 17 Feb 2021 04:40:32 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Set-Cookie': '__cfduid=dcb1d2db773cb4a8d7e9e317358663b151613536831; expires=Fri, 19-Mar-21 04:40:31 GMT; path=/; domain=.superheroapi.com; HttpOnly; SameSite=Lax', 'X-Powered-By': 'PHP/7.2.34', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credentials': 'false', 'Access-Control-Allow-Methods': 'GET', 'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept', 'Access-Control-Max-Age': '86400', 'X-Turbo-Charged-By': 'LiteSpeed', 'CF-Cache-Status': 'DYNAMIC', 'cf-request-id': '084fe340fb0000f62b442d8000000001', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"max_age":604800,"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=fi1fIyaNU6WSiDmnt%2B496PvYmBHHVDMSoE%2BC3uodlRZJmzp2WV%2FhaDAzKl4CYgHJ%2FGjr26%2FdXjwO%2FRIrSaN6e1l0ldcoxfZh4W%2Bq8mR932brqoLZ%2BSDCAaLQKXgXf%2BJV0A%3D%3D"}],"group":"cf-nel"}', 'NEL': '{"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '622cd4ae5993f62b-GRU', 'Content-Encoding': 'gzip'} 
+ body={"response":"success","results-for":"green_arrow","results":[{"id":"298","name":"Green Arrow","powerstats":{"intelligence":"81","strength":"12","speed":"35","durability":"28","power":"39","combat":"90"},"biography":{"full-name":"Oliver Queen","alter-egos":"No alter egos found.","aliases":["The Emerald Archer","Battling Bowman"],"place-of-birth":"-","first-appearance":"More Fun Comics #73 (November 1941)","publisher":"DC Comics","alignment":"good"},"appearance":{"gender":"Male","race":"Human","height":["6'2","188 cm"],"weight":["195 lb","88 kg"],"eye-color":"Green","hair-color":"Blond"},"work":{"occupation":"Professional Crime-fighter; Multi-Billionaire","base":"Star City, California; Formerly Seattle, Washington"},"connections":{"group-affiliation":"Justice League Reserve, Connor Hawke, Mia Dearden,  Arsenal, Green Arrows of the World, Black Canary, Green Lantern Hal Jordan, Shado, Eddie Fyers, Justice League Elite, Seven Soldiers of Victory, All-Star Squadron","relatives":"Conner Hawke (son); Robert (son); Cissie King (possible daughter); Roy Harper - Red Arrow (adoptive son); Dinah Laurel Lance (wife); Dinah Drake Lance (mother-in-law, deceased); Larry Lance (father-in-law, deceased)"},"image":{"url":"https:\/\/www.superherodb.com\/pictures2\/portraits\/10\/100\/696.jpg"}}]} 
+ </msg>
+<msg timestamp="20210217 01:40:27.750" level="INFO">${RESPONSE} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210217 01:40:26.903" endtime="20210217 01:40:27.750"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${RESPONSE}</arg>
+</arguments>
+<msg timestamp="20210217 01:40:27.751" level="INFO">${RESPONSE} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210217 01:40:27.751" endtime="20210217 01:40:27.751"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>name=${NAME}</arg>
+<arg>intelligence=${INTELLIGENCE}</arg>
+<arg>real-name=${REAL_NAME}</arg>
+<arg>group-affiliation=${AFFILIATE}</arg>
+</arguments>
+<assign>
+<var>${HERO_DATA}</var>
+</assign>
+<msg timestamp="20210217 01:40:27.752" level="INFO">${HERO_DATA} = {'name': 'Green Arrow', 'intelligence': '81', 'real-name': 'Oliver Queen', 'group-affiliation': 'Justice League Elite'}</msg>
+<status status="PASS" starttime="20210217 01:40:27.752" endtime="20210217 01:40:27.753"></status>
+</kw>
+<kw name="Dictionary Should Contain Item" library="Collections">
+<doc>An item of ``key`` / ``value`` must be found in a ``dictionary``.</doc>
+<arguments>
+<arg>${RESPONSE.json()['results'][0]}</arg>
+<arg>name</arg>
+<arg>${NAME}</arg>
+</arguments>
+<status status="PASS" starttime="20210217 01:40:27.753" endtime="20210217 01:40:27.754"></status>
+</kw>
+<kw name="Dictionary Should Contain Item" library="Collections">
+<doc>An item of ``key`` / ``value`` must be found in a ``dictionary``.</doc>
+<arguments>
+<arg>${RESPONSE.json()['results'][0]['powerstats']}</arg>
+<arg>intelligence</arg>
+<arg>${INTELLIGENCE}</arg>
+</arguments>
+<status status="PASS" starttime="20210217 01:40:27.755" endtime="20210217 01:40:27.755"></status>
+</kw>
+<kw name="Dictionary Should Contain Item" library="Collections">
+<doc>An item of ``key`` / ``value`` must be found in a ``dictionary``.</doc>
+<arguments>
+<arg>${RESPONSE.json()['results'][0]['biography']}</arg>
+<arg>full-name</arg>
+<arg>${REAL_NAME}</arg>
+</arguments>
+<status status="PASS" starttime="20210217 01:40:27.756" endtime="20210217 01:40:27.757"></status>
+</kw>
+<kw name="Dictionary Should Contain Key" library="Collections">
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<arguments>
+<arg>${RESPONSE.json()['results'][0]['connections']}</arg>
+<arg>group-affiliation</arg>
+<arg>${AFFILIATE}</arg>
+</arguments>
+<status status="PASS" starttime="20210217 01:40:27.757" endtime="20210217 01:40:27.758"></status>
+</kw>
+<status status="PASS" starttime="20210217 01:40:26.900" endtime="20210217 01:40:27.760" critical="yes"></status>
+</test>
+<test id="s1-t2" name="Consultar qual o super-herói mais inteligente, rápido e forte (/id/powerstats)">
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>consultaHeroi</arg>
+<arg>${URL}</arg>
+<arg>disable_warnings=True</arg>
+</arguments>
+<msg timestamp="20210217 01:40:27.768" level="INFO">Creating Session using : alias=consultaHeroi, url=https://superheroapi.com/api/3630587223674860, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210217 01:40:27.767" endtime="20210217 01:40:27.768"></status>
+</kw>
+<status status="PASS" starttime="20210217 01:40:27.766" endtime="20210217 01:40:27.769" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20210217 01:40:26.640" endtime="20210217 01:40:27.771"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0">Critical Tests</stat>
+<stat pass="2" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" id="s1" name="StepsConsultHero">StepsConsultHero</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
