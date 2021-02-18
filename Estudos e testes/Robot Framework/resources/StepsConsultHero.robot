@@ -6,21 +6,19 @@ Library     Collections
 ${Host}				https://superheroapi.com/api
 ${APP_KEY}			3630587223674860
 ${URL}				${Host}/${APP_KEY}
-&{SEARCHED_HERO} 	green_arrow=298			flash=100 		ant_man=30
-&{NAMES}			green_arrow=Green Arrow	flash=Flash 	ant_man=Ant-Man
-${INTELLIGENCE} 	81
-${REAL_NAME}		Oliver Queen
-${AFFILIATE}		Justice League Elite
+&{SEARCHED_HERO} 	green_arrow=298		flash=100 		ant_man=30
+&{COMPARE_NAMES}	flash=Flash 		ant_man=Ant-Man
+&{GREEN_ARROW}		name=Green Arrow	intelligence=81	real_name=Oliver Queen	affiliate=Justice League Elite
 
 
 *** Test Cases ***
 Consultar a ficha de um super-herói (/id)
 	Create Session      consultaHeroi     ${URL}    disable_warnings=True
 
-
     ${RESPONSE}=        GET On Session  consultaHeroi  /${SEARCHED_HERO.green_arrow}
 	
-	${HERO_DATA}      Create Dictionary   name=${NAMES.green_arrow}   intelligence=${INTELLIGENCE}   full_name=${REAL_NAME}   group_affiliation=${AFFILIATE}
+	${HERO_DATA}      Create Dictionary   name=${GREEN_ARROW.name}   			intelligence=${GREEN_ARROW.intelligence}   
+	...									  full_name=${GREEN_ARROW.real_name}    group_affiliation=${GREEN_ARROW.affiliate}
 	
 	Dictionary Should Contain Item    ${RESPONSE.json()}				name				${HERO_DATA.name}
 	Dictionary Should Contain Item    ${RESPONSE.json()['powerstats']}	intelligence		${HERO_DATA.intelligence}
@@ -42,10 +40,10 @@ Consultar qual o super-herói mais inteligente, rápido e forte (/id/powerstats)
 
 ***Keywords***
 Flash
-	Set test Variable	${NAMES.flash}
+	Set test Variable	${COMPARE_NAMES.flash}
 	
 Ant Man
-	Set test Variable	${NAMES.ant_man}
+	Set test Variable	${COMPARE_NAMES.ant_man}
 
 Return The Biggest
     [Arguments]    ${value_1}    ${value_2}

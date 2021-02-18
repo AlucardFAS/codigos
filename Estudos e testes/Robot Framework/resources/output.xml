@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.2.2 (Python 3.8.0 on win32)" generated="20210217 20:53:37.525" rpa="false">
+<robot generator="Robot 3.2.2 (Python 3.8.0 on win32)" generated="20210217 21:05:15.119" rpa="false">
 <suite id="s1" name="StepsConsultHero" source="C:\dev\codigos\Estudos e testes\Robot Framework\resources\StepsConsultHero.robot">
 <test id="s1-t1" name="Consultar a ficha de um super-herói (/id)">
 <kw name="Create Session" library="RequestsLibrary">
@@ -9,8 +9,8 @@
 <arg>${URL}</arg>
 <arg>disable_warnings=True</arg>
 </arguments>
-<msg timestamp="20210217 20:53:37.724" level="INFO">Creating Session using : alias=consultaHeroi, url=https://superheroapi.com/api/3630587223674860, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20210217 20:53:37.723" endtime="20210217 20:53:37.724"></status>
+<msg timestamp="20210217 21:05:15.365" level="INFO">Creating Session using : alias=consultaHeroi, url=https://superheroapi.com/api/3630587223674860, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210217 21:05:15.365" endtime="20210217 21:05:15.365"></status>
 </kw>
 <kw name="Get On Session" library="RequestsLibrary">
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
@@ -21,32 +21,32 @@
 <assign>
 <var>${RESPONSE}</var>
 </assign>
-<msg timestamp="20210217 20:53:39.290" level="INFO">GET Request : url=https://superheroapi.com/api/3630587223674860/298 (redirected) 
+<msg timestamp="20210217 21:05:16.355" level="INFO">GET Request : url=https://superheroapi.com/api/3630587223674860/298 (redirected) 
  path_url=/api/3630587223674860/298 
  headers={'User-Agent': 'python-requests/2.22.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20210217 20:53:39.290" level="INFO">GET Response : url=https://www.superheroapi.com/api.php/3630587223674860/298 
+<msg timestamp="20210217 21:05:16.356" level="INFO">GET Response : url=https://www.superheroapi.com/api.php/3630587223674860/298 
  status=200, reason=OK 
- headers={'Date': 'Wed, 17 Feb 2021 23:53:44 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Set-Cookie': '__cfduid=d7d45a24ee8959fadb3315458cd0101d11613606023; expires=Fri, 19-Mar-21 23:53:43 GMT; path=/; domain=.superheroapi.com; HttpOnly; SameSite=Lax', 'X-Powered-By': 'PHP/7.2.34', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credentials': 'false', 'Access-Control-Allow-Methods': 'GET', 'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept', 'Access-Control-Max-Age': '86400', 'X-Turbo-Charged-By': 'LiteSpeed', 'CF-Cache-Status': 'DYNAMIC', 'cf-request-id': '0854030a590000cfdc79247000000001', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"max_age":604800,"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=8jqGysxL9n8ACu6WwVr26SCGIfhKb1TcZIJ24wcWdusQb2Zc42U2Bw6L0dflqcd6D9FT1c2WuANkv0p%2FtV9CgDO%2FVRu3tOBP9DTUYptEMS%2FZ16KmRjXw%2BaTx9dBT1cO3CQ%3D%3D"}],"group":"cf-nel"}', 'NEL': '{"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '62336df0880ecfdc-GRU', 'Content-Encoding': 'gzip'} 
+ headers={'Date': 'Thu, 18 Feb 2021 00:05:21 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Set-Cookie': '__cfduid=debcf5fc4750c2a35d785f8de81d047f21613606720; expires=Sat, 20-Mar-21 00:05:20 GMT; path=/; domain=.superheroapi.com; HttpOnly; SameSite=Lax', 'X-Powered-By': 'PHP/7.2.34', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credentials': 'false', 'Access-Control-Allow-Methods': 'GET', 'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept', 'Access-Control-Max-Age': '86400', 'X-Turbo-Charged-By': 'LiteSpeed', 'CF-Cache-Status': 'DYNAMIC', 'cf-request-id': '08540dad84000051ff88392000000001', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=8XjoZ6Cf%2BCWEo3jGCNrpO3dn6ite0Ud%2F06Li%2FRtYwSaTCuFT1xm%2FqdFBLoTOfSRgS%2FbyHxTKWPHtaPAzPi86kzbJi2odY6bBIJ8tKxs9SeCUqgcIUON%2BJo3A1TwcZMv6rA%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '62337ef5a90251ff-GRU', 'Content-Encoding': 'gzip'} 
  body={"response":"success","id":"298","name":"Green Arrow","powerstats":{"intelligence":"81","strength":"12","speed":"35","durability":"28","power":"39","combat":"90"},"biography":{"full-name":"Oliver Queen","alter-egos":"No alter egos found.","aliases":["The Emerald Archer","Battling Bowman"],"place-of-birth":"-","first-appearance":"More Fun Comics #73 (November 1941)","publisher":"DC Comics","alignment":"good"},"appearance":{"gender":"Male","race":"Human","height":["6'2","188 cm"],"weight":["195 lb","88 kg"],"eye-color":"Green","hair-color":"Blond"},"work":{"occupation":"Professional Crime-fighter; Multi-Billionaire","base":"Star City, California; Formerly Seattle, Washington"},"connections":{"group-affiliation":"Justice League Reserve, Connor Hawke, Mia Dearden,  Arsenal, Green Arrows of the World, Black Canary, Green Lantern Hal Jordan, Shado, Eddie Fyers, Justice League Elite, Seven Soldiers of Victory, All-Star Squadron","relatives":"Conner Hawke (son); Robert (son); Cissie King (possible daughter); Roy Harper - Red Arrow (adoptive son); Dinah Laurel Lance (wife); Dinah Drake Lance (mother-in-law, deceased); Larry Lance (father-in-law, deceased)"},"image":{"url":"https:\/\/www.superherodb.com\/pictures2\/portraits\/10\/100\/696.jpg"}} 
  </msg>
-<msg timestamp="20210217 20:53:39.291" level="INFO">${RESPONSE} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20210217 20:53:37.724" endtime="20210217 20:53:39.291"></status>
+<msg timestamp="20210217 21:05:16.356" level="INFO">${RESPONSE} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210217 21:05:15.366" endtime="20210217 21:05:16.356"></status>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
 <arguments>
-<arg>name=${NAMES.green_arrow}</arg>
-<arg>intelligence=${INTELLIGENCE}</arg>
-<arg>full_name=${REAL_NAME}</arg>
-<arg>group_affiliation=${AFFILIATE}</arg>
+<arg>name=${GREEN_ARROW.name}</arg>
+<arg>intelligence=${GREEN_ARROW.intelligence}</arg>
+<arg>full_name=${GREEN_ARROW.real_name}</arg>
+<arg>group_affiliation=${GREEN_ARROW.affiliate}</arg>
 </arguments>
 <assign>
 <var>${HERO_DATA}</var>
 </assign>
-<msg timestamp="20210217 20:53:39.296" level="INFO">${HERO_DATA} = {'name': 'Green Arrow', 'intelligence': '81', 'full_name': 'Oliver Queen', 'group_affiliation': 'Justice League Elite'}</msg>
-<status status="PASS" starttime="20210217 20:53:39.293" endtime="20210217 20:53:39.297"></status>
+<msg timestamp="20210217 21:05:16.359" level="INFO">${HERO_DATA} = {'name': 'Green Arrow', 'intelligence': '81', 'full_name': 'Oliver Queen', 'group_affiliation': 'Justice League Elite'}</msg>
+<status status="PASS" starttime="20210217 21:05:16.357" endtime="20210217 21:05:16.359"></status>
 </kw>
 <kw name="Dictionary Should Contain Item" library="Collections">
 <doc>An item of ``key`` / ``value`` must be found in a ``dictionary``.</doc>
@@ -55,7 +55,7 @@
 <arg>name</arg>
 <arg>${HERO_DATA.name}</arg>
 </arguments>
-<status status="PASS" starttime="20210217 20:53:39.298" endtime="20210217 20:53:39.301"></status>
+<status status="PASS" starttime="20210217 21:05:16.360" endtime="20210217 21:05:16.361"></status>
 </kw>
 <kw name="Dictionary Should Contain Item" library="Collections">
 <doc>An item of ``key`` / ``value`` must be found in a ``dictionary``.</doc>
@@ -64,7 +64,7 @@
 <arg>intelligence</arg>
 <arg>${HERO_DATA.intelligence}</arg>
 </arguments>
-<status status="PASS" starttime="20210217 20:53:39.304" endtime="20210217 20:53:39.306"></status>
+<status status="PASS" starttime="20210217 21:05:16.362" endtime="20210217 21:05:16.363"></status>
 </kw>
 <kw name="Dictionary Should Contain Item" library="Collections">
 <doc>An item of ``key`` / ``value`` must be found in a ``dictionary``.</doc>
@@ -73,7 +73,7 @@
 <arg>full-name</arg>
 <arg>${HERO_DATA.full_name}</arg>
 </arguments>
-<status status="PASS" starttime="20210217 20:53:39.307" endtime="20210217 20:53:39.308"></status>
+<status status="PASS" starttime="20210217 21:05:16.364" endtime="20210217 21:05:16.365"></status>
 </kw>
 <kw name="Dictionary Should Contain Key" library="Collections">
 <doc>Fails if ``key`` is not found from ``dictionary``.</doc>
@@ -82,9 +82,9 @@
 <arg>group-affiliation</arg>
 <arg>${HERO_DATA.group_affiliation}</arg>
 </arguments>
-<status status="PASS" starttime="20210217 20:53:39.309" endtime="20210217 20:53:39.310"></status>
+<status status="PASS" starttime="20210217 21:05:16.368" endtime="20210217 21:05:16.370"></status>
 </kw>
-<status status="PASS" starttime="20210217 20:53:37.722" endtime="20210217 20:53:39.311" critical="yes"></status>
+<status status="PASS" starttime="20210217 21:05:15.364" endtime="20210217 21:05:16.372" critical="yes"></status>
 </test>
 <test id="s1-t2" name="Consultar qual o super-herói mais inteligente, rápido e forte (/id/powerstats)">
 <kw name="Create Session" library="RequestsLibrary">
@@ -94,8 +94,8 @@
 <arg>${URL}</arg>
 <arg>disable_warnings=True</arg>
 </arguments>
-<msg timestamp="20210217 20:53:39.327" level="INFO">Creating Session using : alias=consultaHeroi, url=https://superheroapi.com/api/3630587223674860, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20210217 20:53:39.326" endtime="20210217 20:53:39.328"></status>
+<msg timestamp="20210217 21:05:16.385" level="INFO">Creating Session using : alias=consultaHeroi, url=https://superheroapi.com/api/3630587223674860, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210217 21:05:16.384" endtime="20210217 21:05:16.385"></status>
 </kw>
 <kw name="Get On Session" library="RequestsLibrary">
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
@@ -106,18 +106,18 @@
 <assign>
 <var>${FLASH_RESPONSE}</var>
 </assign>
-<msg timestamp="20210217 20:53:40.279" level="INFO">GET Request : url=https://superheroapi.com/api/3630587223674860/100/powerstats (redirected) 
+<msg timestamp="20210217 21:05:17.349" level="INFO">GET Request : url=https://superheroapi.com/api/3630587223674860/100/powerstats (redirected) 
  path_url=/api/3630587223674860/100/powerstats 
  headers={'User-Agent': 'python-requests/2.22.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20210217 20:53:40.279" level="INFO">GET Response : url=https://www.superheroapi.com/api.php/3630587223674860/100/powerstats 
+<msg timestamp="20210217 21:05:17.349" level="INFO">GET Response : url=https://www.superheroapi.com/api.php/3630587223674860/100/powerstats 
  status=200, reason=OK 
- headers={'Date': 'Wed, 17 Feb 2021 23:53:45 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Set-Cookie': '__cfduid=dd8e6f5b47ccf2f3c09fc9b5944731a621613606024; expires=Fri, 19-Mar-21 23:53:44 GMT; path=/; domain=.superheroapi.com; HttpOnly; SameSite=Lax', 'X-Powered-By': 'PHP/7.2.34', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credentials': 'false', 'Access-Control-Allow-Methods': 'GET', 'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept', 'Access-Control-Max-Age': '86400', 'X-Turbo-Charged-By': 'LiteSpeed', 'CF-Cache-Status': 'DYNAMIC', 'cf-request-id': '0854030e640000cfe04ea65000000001', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=rS88PrUlRRUboRTl6JS29qdTB8wNa0%2FRnBPlQH%2FMizhffkrd%2BdC8Euk8bkWGb5w2L1D3fwFiT7L9ROyoOos9%2FYjoeHE4OqPAZlOE1yilKaWtdfpP8eUDu2d9BVCAz3MbLg%3D%3D"}],"max_age":604800,"group":"cf-nel"}', 'NEL': '{"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '62336df70cc2cfe0-GRU', 'Content-Encoding': 'gzip'} 
+ headers={'Date': 'Thu, 18 Feb 2021 00:05:22 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Set-Cookie': '__cfduid=dfda8b8c5d65f604c2a441ba3a6948f3d1613606721; expires=Sat, 20-Mar-21 00:05:21 GMT; path=/; domain=.superheroapi.com; HttpOnly; SameSite=Lax', 'X-Powered-By': 'PHP/7.2.34', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credentials': 'false', 'Access-Control-Allow-Methods': 'GET', 'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept', 'Access-Control-Max-Age': '86400', 'X-Turbo-Charged-By': 'LiteSpeed', 'CF-Cache-Status': 'DYNAMIC', 'cf-request-id': '08540db1620000f1eefa39a000000001', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=u0RWVPvOFbEwpyW3moGE1z6Km0xb%2FI28IeVOZQ0vGQWlFOrGwasOfqlalsGPUpxQ16vTI8HWpPF3Qoqzbiz9ZJqIIWAHseNGpWBuAXSpozCQzQJwk%2B11J3lJA%2BSvs5o8Gg%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '62337efbdabef1ee-GRU', 'Content-Encoding': 'gzip'} 
  body={"response":"success","id":"100","name":"Black Flash","intelligence":"44","strength":"10","speed":"100","durability":"80","power":"100","combat":"30"} 
  </msg>
-<msg timestamp="20210217 20:53:40.280" level="INFO">${FLASH_RESPONSE} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20210217 20:53:39.337" endtime="20210217 20:53:40.280"></status>
+<msg timestamp="20210217 21:05:17.351" level="INFO">${FLASH_RESPONSE} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210217 21:05:16.386" endtime="20210217 21:05:17.351"></status>
 </kw>
 <kw name="Get On Session" library="RequestsLibrary">
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
@@ -128,18 +128,18 @@
 <assign>
 <var>${ANTMAN_RESPONSE}</var>
 </assign>
-<msg timestamp="20210217 20:53:40.737" level="INFO">GET Request : url=https://superheroapi.com/api/3630587223674860/30/powerstats (redirected) 
+<msg timestamp="20210217 21:05:17.850" level="INFO">GET Request : url=https://superheroapi.com/api/3630587223674860/30/powerstats (redirected) 
  path_url=/api/3630587223674860/30/powerstats 
- headers={'User-Agent': 'python-requests/2.22.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Cookie': '__cfduid=dd8e6f5b47ccf2f3c09fc9b5944731a621613606024'} 
+ headers={'User-Agent': 'python-requests/2.22.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Cookie': '__cfduid=dfda8b8c5d65f604c2a441ba3a6948f3d1613606721'} 
  body=None 
  </msg>
-<msg timestamp="20210217 20:53:40.738" level="INFO">GET Response : url=https://www.superheroapi.com/api.php/3630587223674860/30/powerstats 
+<msg timestamp="20210217 21:05:17.851" level="INFO">GET Response : url=https://www.superheroapi.com/api.php/3630587223674860/30/powerstats 
  status=200, reason=OK 
- headers={'Date': 'Wed, 17 Feb 2021 23:53:45 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'PHP/7.2.34', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credentials': 'false', 'Access-Control-Allow-Methods': 'GET', 'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept', 'Access-Control-Max-Age': '86400', 'X-Turbo-Charged-By': 'LiteSpeed', 'CF-Cache-Status': 'DYNAMIC', 'cf-request-id': '085403103c0000cfe07dae1000000001', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=oSsKiCGbkJ2Q8nFtCd2ySqC1XU3y3zWLO%2BkzB1iZXjAmEdqE6B141GJ1o0kudj9Q4ZFDBIDiM0Gi5D762C2fKQPpmXT9ji8FfKNu43qSkJ2aRHYgBDY%2B0Tozzm%2F6ppvcsg%3D%3D"}],"max_age":604800,"group":"cf-nel"}', 'NEL': '{"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '62336df9f98bcfe0-GRU', 'Content-Encoding': 'gzip'} 
+ headers={'Date': 'Thu, 18 Feb 2021 00:05:22 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'PHP/7.2.34', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credentials': 'false', 'Access-Control-Allow-Methods': 'GET', 'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept', 'Access-Control-Max-Age': '86400', 'X-Turbo-Charged-By': 'LiteSpeed', 'CF-Cache-Status': 'DYNAMIC', 'cf-request-id': '08540db3520000f1ee5b985000000001', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=IfUCPOzddjxzMumdMmdOJ25Snkn3JaC8iHToo8G%2FRzOyV50zZSLgM35gY%2BQOavaqNmCgoLB%2BB66RcWLZ16y7T0g0JZlTpszV6hOq8BKwN1Wpo9DZ2UUHR6GhHioChFJBgg%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '62337efee9bef1ee-GRU', 'Content-Encoding': 'gzip'} 
  body={"response":"success","id":"30","name":"Ant-Man","intelligence":"100","strength":"18","speed":"23","durability":"28","power":"32","combat":"32"} 
  </msg>
-<msg timestamp="20210217 20:53:40.739" level="INFO">${ANTMAN_RESPONSE} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20210217 20:53:40.281" endtime="20210217 20:53:40.739"></status>
+<msg timestamp="20210217 21:05:17.851" level="INFO">${ANTMAN_RESPONSE} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210217 21:05:17.352" endtime="20210217 21:05:17.851"></status>
 </kw>
 <kw name="Return The Biggest">
 <arguments>
@@ -158,16 +158,16 @@
 <kw name="Set Test Variable" library="BuiltIn">
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
 <arguments>
-<arg>${NAMES.ant_man}</arg>
+<arg>${COMPARE_NAMES.ant_man}</arg>
 </arguments>
-<msg timestamp="20210217 20:53:40.749" level="INFO">${NAMES.ant_man} = Ant-Man</msg>
-<status status="PASS" starttime="20210217 20:53:40.747" endtime="20210217 20:53:40.750"></status>
+<msg timestamp="20210217 21:05:17.860" level="INFO">${COMPARE_NAMES.ant_man} = Ant-Man</msg>
+<status status="PASS" starttime="20210217 21:05:17.859" endtime="20210217 21:05:17.861"></status>
 </kw>
-<status status="PASS" starttime="20210217 20:53:40.745" endtime="20210217 20:53:40.750"></status>
+<status status="PASS" starttime="20210217 21:05:17.857" endtime="20210217 21:05:17.861"></status>
 </kw>
-<status status="PASS" starttime="20210217 20:53:40.744" endtime="20210217 20:53:40.750"></status>
+<status status="PASS" starttime="20210217 21:05:17.857" endtime="20210217 21:05:17.861"></status>
 </kw>
-<status status="PASS" starttime="20210217 20:53:40.741" endtime="20210217 20:53:40.751"></status>
+<status status="PASS" starttime="20210217 21:05:17.856" endtime="20210217 21:05:17.861"></status>
 </kw>
 <kw name="Return The Biggest">
 <arguments>
@@ -186,16 +186,16 @@
 <kw name="Set Test Variable" library="BuiltIn">
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
 <arguments>
-<arg>${NAMES.flash}</arg>
+<arg>${COMPARE_NAMES.flash}</arg>
 </arguments>
-<msg timestamp="20210217 20:53:40.765" level="INFO">${NAMES.flash} = Flash</msg>
-<status status="PASS" starttime="20210217 20:53:40.763" endtime="20210217 20:53:40.765"></status>
+<msg timestamp="20210217 21:05:17.866" level="INFO">${COMPARE_NAMES.flash} = Flash</msg>
+<status status="PASS" starttime="20210217 21:05:17.865" endtime="20210217 21:05:17.866"></status>
 </kw>
-<status status="PASS" starttime="20210217 20:53:40.761" endtime="20210217 20:53:40.766"></status>
+<status status="PASS" starttime="20210217 21:05:17.864" endtime="20210217 21:05:17.867"></status>
 </kw>
-<status status="PASS" starttime="20210217 20:53:40.760" endtime="20210217 20:53:40.766"></status>
+<status status="PASS" starttime="20210217 21:05:17.863" endtime="20210217 21:05:17.867"></status>
 </kw>
-<status status="PASS" starttime="20210217 20:53:40.754" endtime="20210217 20:53:40.766"></status>
+<status status="PASS" starttime="20210217 21:05:17.862" endtime="20210217 21:05:17.867"></status>
 </kw>
 <kw name="Return The Biggest">
 <arguments>
@@ -214,20 +214,20 @@
 <kw name="Set Test Variable" library="BuiltIn">
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
 <arguments>
-<arg>${NAMES.ant_man}</arg>
+<arg>${COMPARE_NAMES.ant_man}</arg>
 </arguments>
-<msg timestamp="20210217 20:53:40.773" level="INFO">${NAMES.ant_man} = Ant-Man</msg>
-<status status="PASS" starttime="20210217 20:53:40.773" endtime="20210217 20:53:40.773"></status>
+<msg timestamp="20210217 21:05:17.873" level="INFO">${COMPARE_NAMES.ant_man} = Ant-Man</msg>
+<status status="PASS" starttime="20210217 21:05:17.873" endtime="20210217 21:05:17.873"></status>
 </kw>
-<status status="PASS" starttime="20210217 20:53:40.772" endtime="20210217 20:53:40.773"></status>
+<status status="PASS" starttime="20210217 21:05:17.872" endtime="20210217 21:05:17.874"></status>
 </kw>
-<status status="PASS" starttime="20210217 20:53:40.772" endtime="20210217 20:53:40.773"></status>
+<status status="PASS" starttime="20210217 21:05:17.871" endtime="20210217 21:05:17.874"></status>
 </kw>
-<status status="PASS" starttime="20210217 20:53:40.767" endtime="20210217 20:53:40.774"></status>
+<status status="PASS" starttime="20210217 21:05:17.869" endtime="20210217 21:05:17.874"></status>
 </kw>
-<status status="PASS" starttime="20210217 20:53:39.324" endtime="20210217 20:53:40.774" critical="yes"></status>
+<status status="PASS" starttime="20210217 21:05:16.375" endtime="20210217 21:05:17.874" critical="yes"></status>
 </test>
-<status status="PASS" starttime="20210217 20:53:37.530" endtime="20210217 20:53:40.777"></status>
+<status status="PASS" starttime="20210217 21:05:15.121" endtime="20210217 21:05:17.877"></status>
 </suite>
 <statistics>
 <total>
