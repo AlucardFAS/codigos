@@ -11,11 +11,10 @@ ${BROWSER}      chrome
 Cenário 01: Verificar Planos e Preços
     Dado que estou conectado na home do site
     Quando eu clicar no item do menu "Pricing"
-    Então deve ser mostrado o título Plans and Prices
-    E deve ser mostrado o plano Web App por $499/onetime
-    E deve ser mostrado o plano Android App por $999/onetime
-    E deve ser mostrado o plano iOS App por $999/onetime
-    E deve ser mostrado o plano Complete Bundle por $2499/onetime
+    Deve ser mostrado o plano "Web App" por $"499"
+    Deve ser mostrado o plano "Android App" por $"999"
+    Deve ser mostrado o plano "iOS App" por $"999"
+    Deve ser mostrado o plano "Complete Bundle" por $"2499"
 
 *** Keywords ***
 Dado que estou conectado na home do site
@@ -23,3 +22,6 @@ Dado que estou conectado na home do site
 
 Quando eu clicar no item do menu "${MENU_ITEM}"
     Clicar no item do menu "${MENU_ITEM}"
+
+Deve ser mostrado o plano "${PLANO}" por $"${VALOR}"
+    Checar se o plano "${PLANO}" e valor "${VALOR}" são exibidos
