@@ -17,6 +17,19 @@ Fechar navegador
 Acessar a página home do site
     Go To       ${URL}
 
+Acessar a página de login admin
+    Go To       ${URL_ADMIN_LOGIN}
+
+Logar com o "${USUARIO}" e "${SENHA}"
+    Input Text      xpath=//*[contains(@name, 'email')]     ${USUARIO}
+    Input Text      xpath=//*[contains(@name, 'password')]     ${SENHA}
+    Click Element   xpath=//*[contains(@type, 'submit')]
+
+Conferir informações do dashboard inicial para usuário logado
+    Wait Until Element Is Visible       id=mainHeader
+    Element Should Be Visible           xpath=//*[contains(@href, 'https://phptravels.net/admin/profile')]
+    Element Text Should Be              xpath=//*[@id="mainHeader"]/strong                                  Hi Admin!
+
 Clicar no item do menu "${MENU_ITEM}"
     Click Element                   xpath=/html/body/header/div/nav/a[contains(text(),'${MENU_ITEM}')]
     Wait Until Element Is Visible   xpath=//div[contains(@class, 'cards')]
