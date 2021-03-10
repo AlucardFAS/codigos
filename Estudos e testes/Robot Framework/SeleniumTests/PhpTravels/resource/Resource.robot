@@ -34,6 +34,15 @@ Clicar no item do menu "${MENU_ITEM}"
     Click Element                   xpath=/html/body/header/div/nav/a[contains(text(),'${MENU_ITEM}')]
     Wait Until Element Is Visible   xpath=//div[contains(@class, 'cards')]
 
+Clicar no dropdown "${DROPDOWN_ITEM}"
+    Wait Until Element Is Visible   id=social-sidebar-menu
+    Click Element                   xpath=//*[contains(@href, '#${DROPDOWN_ITEM}')]
+
+Clicar no item "${DROPDOWN_LIST_ITEM}" da lista do dropdown
+    Click Element      xpath=//*[contains(@aria-expanded, 'true')]/..//li//*[contains(text(),'${DROPDOWN_LIST_ITEM}')]/..      action_chain=True
+    Sleep  5
+    #Continuar, entender ActionChain e porque seleciona o primeiro item do dropdown
+
 Checar se o plano "${PLANO}" e valor "${VALOR}" são exibidos
     Element Text Should Be      //div[contains(@class, 'pricing')]//*[contains(text(),'${PLANO}')]/..//div[contains(@class, 'plan-type')]                                                       ${PLANO}
     Element Text Should Be      //div[contains(@class, 'pricing')]//*[normalize-space(text())='${PLANO}']/..//div[contains(@class, 'show-price yearly')]//*[contains(number(),'${VALOR}')]      ${VALOR}
