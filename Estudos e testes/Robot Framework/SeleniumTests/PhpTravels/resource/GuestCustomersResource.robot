@@ -1,7 +1,6 @@
 *** Settings ***
 Library     SeleniumLibrary
 Library     String
-Library     BuiltIn
 
 *** Variables ***
 &{SIMPLE_GUEST_USER}       firstName=Guest  lastName=Test  email=  password=12345678  country=Brazil
