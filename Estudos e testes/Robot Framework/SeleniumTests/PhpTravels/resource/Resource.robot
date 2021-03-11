@@ -39,9 +39,9 @@ Clicar no dropdown "${DROPDOWN_ITEM}"
     Click Element                   xpath=//*[contains(@href, '#${DROPDOWN_ITEM}')]
 
 Clicar no item "${DROPDOWN_LIST_ITEM}" da lista do dropdown
-    Click Element      xpath=//*[contains(@aria-expanded, 'true')]/..//li//*[contains(text(),'${DROPDOWN_LIST_ITEM}')]/..      action_chain=True
-    Sleep  5
-    #Continuar, entender ActionChain e porque seleciona o primeiro item do dropdown
+    ${ITEM_XPATH}   Set Variable       //*[contains(@aria-expanded, 'true')]//*[contains(text(),'${DROPDOWN_LIST_ITEM}')]
+    Wait Until Element Is Visible     xpath=${ITEM_XPATH}
+    Click Element      xpath=${ITEM_XPATH}
 
 Checar se o plano "${PLANO}" e valor "${VALOR}" são exibidos
     Element Text Should Be      //div[contains(@class, 'pricing')]//*[contains(text(),'${PLANO}')]/..//div[contains(@class, 'plan-type')]                                                       ${PLANO}

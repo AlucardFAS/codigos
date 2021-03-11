@@ -18,10 +18,10 @@ Cenário 02: Adicionar um novo Guest Customer
     Dado que estou conectado na página de login
     Após acessar com credenciais válidas
     No dropdown "ACCOUNTS" acessar a página de "GuestCustomers"
-    Clicar para adicionar um novo
-    Preencher as informações
-    Clicar para enviar as informações
-    Verificar se o usuário foi criado
+    #Clicar para adicionar um novo
+    #Preencher as informações
+    #Clicar para enviar as informações
+    #Verificar se o usuário foi criado
 
 *** Keywords ***
 Dado que estou conectado na página de login
