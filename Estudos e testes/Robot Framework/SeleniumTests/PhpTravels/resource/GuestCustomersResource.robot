@@ -1,9 +1,10 @@
 *** Settings ***
 Library     SeleniumLibrary
 Library     String
+Library     BuiltIn
 
 *** Variables ***
-&{SIMPLE_GUEST_USER}       firstName=Guest  lastName=Test  emailProvider=@mailinator.com  password=12345678  country=Brazil
+&{SIMPLE_GUEST_USER}       firstName=Guest  lastName=Test  email=  password=12345678  country=Brazil
 ${BTN_SUBMIT_FORM_XPATH}   //div[contains(@class,'panel-footer')]//Button[contains(text(),'Submit')]
 ${USER_TABLE_XPATH}        //div[contains(@class,'xcrud-list-container')]//tbody
 
@@ -23,20 +24,27 @@ Esperar paineis ficarem visíveis
 
 Verificar Guest Customer criado na listagem
     Wait Until Element Is Visible   ${USER_TABLE_XPATH}
+    Click Element                   ${USER_TABLE_XPATH}//*[contains(text(),'${SIMPLE_GUEST_USER.email}')]/../..//*[contains(@title,'Edit')]
+    
+    Element Attribute Value Should Be   xpath=//input[@placeholder='First name']               value                        ${SIMPLE_GUEST_USER.firstName}
+    Element Attribute Value Should Be   xpath=//input[@placeholder='Last name']                value                        ${SIMPLE_GUEST_USER.lastName}
+    Element Attribute Value Should Be   xpath=//input[@placeholder='Email address']            value                        ${SIMPLE_GUEST_USER.email}
+    Element Text Should Be              xpath=//*[contains(@class, 'chosen-select select2-offscreen')]/option[@selected]    ${SIMPLE_GUEST_USER.country}
 
 #->Preenchimento de formulário
 Preencher formulário com informações requeridas
-    ${COUNTRY_FIELD_XPATH}  Set Variable  //*[@id="select2-drop"]//input
-    ${EMAIL}                Generate Random String  length=8  chars=[LETTERS]
+    ${COUNTRY_FIELD_XPATH}      Set Variable            //*[@id="select2-drop"]//input
+    ${EMAIL_ALIAS}              Generate Random String  length=8                        chars=[LETTERS]
+    ${SIMPLE_GUEST_USER.email}  Set Variable            ${EMAIL_ALIAS}@mailinator.com
 
     Esperar paineis ficarem visíveis
-    Input Text      name=fname          ${SIMPLE_GUEST_USER.firstName}
-    Input Text      name=lname          ${SIMPLE_GUEST_USER.lastName}
-    Input Text      name=email          ${EMAIL}${SIMPLE_GUEST_USER.emailProvider}
-    Input Text      name=password       ${SIMPLE_GUEST_USER.password}
+    Input Text      name=fname                    ${SIMPLE_GUEST_USER.firstName}
+    Input Text      name=lname                    ${SIMPLE_GUEST_USER.lastName}
+    Input Text      name=email                    ${SIMPLE_GUEST_USER.email}
+    Input Text      name=password                 ${SIMPLE_GUEST_USER.password}
     Click Element   id=s2id_autogen1
-    Input Text      xpath=${COUNTRY_FIELD_XPATH}   ${SIMPLE_GUEST_USER.country}
-    Press Keys      xpath=${COUNTRY_FIELD_XPATH}   RETURN
+    Input Text      xpath=${COUNTRY_FIELD_XPATH}  ${SIMPLE_GUEST_USER.country}
+    Press Keys      xpath=${COUNTRY_FIELD_XPATH}  RETURN
 
 Clicar no botão submit do form
     Click Button    xpath=${BTN_SUBMIT_FORM_XPATH}
