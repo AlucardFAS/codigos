@@ -1,8 +1,9 @@
 *** Settings ***
 Library     SeleniumLibrary
+Library     String
 
 *** Variables ***
-&{SIMPLE_GUEST_USER}       firstName=Guest  lastName=Test  email=test@mailinator.com  password=12345678
+&{SIMPLE_GUEST_USER}       firstName=Guest  lastName=Test  emailProvider=@mailinator.com  password=12345678  country=Brazil
 ${BTN_SUBMIT_FORM_XPATH}   //div[contains(@class,'panel-footer')]//Button[contains(text(),'Submit')]
 ${USER_TABLE_XPATH}        //div[contains(@class,'xcrud-list-container')]//tbody
 
@@ -25,11 +26,17 @@ Verificar Guest Customer criado na listagem
 
 #->Preenchimento de formulário
 Preencher formulário com informações requeridas
+    ${COUNTRY_FIELD_XPATH}  Set Variable  //*[@id="select2-drop"]//input
+    ${EMAIL}                Generate Random String  length=8  chars=[LETTERS]
+
     Esperar paineis ficarem visíveis
-    Input Text      name=fname      ${SIMPLE_GUEST_USER.firstName}
-    Input Text      name=lname      ${SIMPLE_GUEST_USER.lastName}
-    Input Text      name=email      ${SIMPLE_GUEST_USER.email}
-    Input Text      name=password   ${SIMPLE_GUEST_USER.password}
+    Input Text      name=fname          ${SIMPLE_GUEST_USER.firstName}
+    Input Text      name=lname          ${SIMPLE_GUEST_USER.lastName}
+    Input Text      name=email          ${EMAIL}${SIMPLE_GUEST_USER.emailProvider}
+    Input Text      name=password       ${SIMPLE_GUEST_USER.password}
+    Click Element   id=s2id_autogen1
+    Input Text      xpath=${COUNTRY_FIELD_XPATH}   ${SIMPLE_GUEST_USER.country}
+    Press Keys      xpath=${COUNTRY_FIELD_XPATH}   RETURN
 
 Clicar no botão submit do form
     Click Button    xpath=${BTN_SUBMIT_FORM_XPATH}
